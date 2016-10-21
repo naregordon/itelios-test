@@ -1,0 +1,317 @@
+/* Variables */
+
+$white: #fff;
+$black: #000;
+$gold: #cabc76;
+
+/* Breakpoints */
+
+$break-small: 480px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+/* Icons */
+
+.icon {
+   width:15px; 
+   height:15px;
+   display: inline-block;
+   vertical-align: bottom;
+   margin-right: 5px;
+}
+
+.icon-panier {
+	background:url(../img/panier.png) no-repeat; 
+	background-size: 10px;
+}
+
+.icon-search {
+	background:url(../img/search.png) no-repeat;
+	background-size: cover;
+}
+
+.icon-account {
+	background:url(../img/account.png) no-repeat;
+	background-size: 12px;
+}
+
+/* Helpers */
+.hide-on-mobile{
+	@media screen and (max-width: $break-small) {
+		display:none!important;
+	}
+}
+
+.hide-on-desktop {
+	@media screen and (min-width: $break-small) {
+		display:none!important;
+	}
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container-maxwidth {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+/* Front page */
+
+body {
+	background: #000;
+
+	.container {
+		background: url(../img/bg.jpg) no-repeat;
+		background-size: 100%;
+		overflow: hidden;
+	}
+}
+
+header {
+
+	.top-header {
+		@extend .container-maxwidth;
+		padding: 10px 5px;
+		
+		h1 {
+			float: left;
+			font-weight: bold;
+			font-size: 26px;
+
+			@media screen and (max-width: $break-small) {
+				padding: 6px;
+			}
+		}
+
+		ul {
+			float: right;
+			margin-top: 5px;
+
+			li {
+				display: inline-block;
+				margin-right: 10px;
+
+				input {
+					border: none;
+					background: none;
+					color: $white;
+					border-left: 1px solid $white;
+					padding-left: 5px;
+					margin-right: 10px;
+				}
+
+				a {
+					font-size: 14px;
+					font-weight: 100;
+				}
+
+				.icon {
+					cursor: pointer;
+				}
+
+				.icon-search {
+					background-size: 30px;
+				    width: 25px;
+				    height: 20px;
+				}
+
+				.icon-panier, .icon-account {
+					@media screen and (max-width: $break-small) {
+						background-size: 18px;
+					    width: 20px;
+					    height: 20px;
+					}
+				}
+
+				@media screen and (max-width: $break-small) {
+					padding: 10px 0;
+				}
+			}
+
+			@media screen and (max-width: $break-small) {
+				margin: 0;
+			}
+		}
+
+		.mobile-top-header-nav {
+			.search-btn.active {
+				background: $white;
+
+				span {
+					background:url(../img/search-bk.png) no-repeat;
+					background-size: cover;
+				    background-position: 5px -2px;
+				}
+			}
+		}
+
+		@media screen and (max-width: $break-small) {
+			padding: 0;
+		}
+	}
+
+	nav {
+		border-top: 2px solid $white;
+
+		ul {
+			text-align: center;
+			margin: 10px 0;
+
+			li {
+				display: inline-block;
+				padding: 10px;
+				cursor: pointer;
+
+				a {
+					font-weight: lighter;
+				}
+
+				&:hover, &.active {
+					background: $white;
+
+					a {
+						color: $black;
+					}
+				}
+			}
+		}
+
+		.mobile-search {
+			position: relative;
+
+			.search {
+				width: 100%;
+				border: none;
+				height: 20px;
+			}
+
+			.btn {
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 1;
+				border: none;
+				background: none;
+				cursor: pointer;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: $white;
+	}
+}
+
+main {
+	.slider {
+
+		.slider-box {
+			position: relative;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.content {
+		@extend .container-maxwidth;
+
+		&>div {
+			width: 45%;
+			float: left;
+			padding: 15px 10px;
+
+			h2 {
+				color: $white;
+				margin-bottom: 10px;
+				font-size: 22px;
+			}
+
+			p {
+				color: $white;
+				font-size: 12px;
+			}
+
+			@media screen and (max-width: $break-small) {
+				width: 95%;
+				float: clear;
+			}
+		}
+
+		.description {
+
+			p, img {
+				width: 48%;
+				float: left;
+			}
+
+			img {
+				@media screen and (max-width: $break-medium) {
+					width: 95%;
+				}
+			}
+
+			p {
+				padding-right: 5px;
+
+				@media screen and (max-width: $break-medium) {
+					width: 95%;
+					margin-bottom: 15px;
+				}
+			}
+		}
+
+		.moncompte {
+			position: relative;
+
+			p {
+				margin-top: 10px;
+			}
+
+			input {
+				width: 100%;
+				border: none;
+				height: 20px;
+				margin-top: 5px;
+			}
+
+			.btn {
+				margin-top: 20px;
+				width: auto;
+				color: $white;
+				background: $gold;
+				width: 100px;
+			}
+
+			a {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				color: $white;
+				text-decoration: none;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+footer {
+	background: $white;
+	padding: 10px 10px;
+	font-size: 10px;
+
+	small {
+		float: left;
+	}
+
+	strong {
+		float: right;
+	}
+}
+
