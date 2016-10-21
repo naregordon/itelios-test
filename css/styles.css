@@ -169,7 +169,8 @@ main .content .description p {
       margin-bottom: 15px; } }
 
 main .content .moncompte {
-  position: relative; }
+  position: relative;
+  float: right; }
   main .content .moncompte p {
     margin-top: 10px; }
   main .content .moncompte input {
@@ -199,3 +200,8 @@ footer {
     float: left; }
   footer strong {
     float: right; }
+    @media screen and (max-width: 480px) {
+      footer strong {
+        float: none;
+        display: block;
+        text-align: center; } }

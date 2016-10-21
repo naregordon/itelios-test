@@ -269,6 +269,7 @@ main {
 
 		.moncompte {
 			position: relative;
+			float: right;
 
 			p {
 				margin-top: 10px;
@@ -312,6 +313,12 @@ footer {
 
 	strong {
 		float: right;
+
+		@media screen and (max-width: $break-small) {
+			float: none;
+			display: block;
+			text-align: center;
+		}
 	}
 }
 
